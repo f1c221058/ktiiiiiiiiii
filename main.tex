@@ -1,44 +1,65 @@
-%% Short data paper template
-%% Created by Simon Hengchen and Nilo Pedrazzini for the Journal of Open Humanities Data (https://openhumanitiesdata.metajnl.com)
-
-\documentclass{article}
+\documentclass[12pt,a4paper]{article}
+\usepackage{johd} % style kustom
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+\usepackage{times}       % Times New Roman
+\usepackage{titlesec}    % Atur heading
+\usepackage{setspace}    % Atur spasi
+\usepackage{float} 
 \usepackage[indonesian]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{johd}
-\usepackage{lipsum}
 
-\title{Analisis Efektivitas Program Penyebaran Bantuan Sosial dalam Upaya Penanggulangan Kemiskinan di Provinsi Bengkulu}
+% Set line spacing 1 (single)
+\renewcommand{\baselinestretch}{1.0}
 
-\author{Kevin Synagogue Panjaitan$^{1}$$^{*}$,Alysa Marsellia$^{2}$$^{*}$  \\
-        \small $^{a}$ Falkultas Sains Dan Teknologi,Universitas Jambi
-        \\\\
-        \small $^{*}$Corresponding author: Kevin Synagogue Panjaitan \tt{kpanjaitan123@gmail.com} \\
-}
-\date{}
+% Atur format section
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{11pt}{13pt}\selectfont} % Times New Roman, Bold, 11pt
+  {}{0pt}{} % tanpa numbering
+
+\titlespacing*{\section}
+  {0pt}{12pt}{2pt} % before=12pt, after=2pt
+
+% Atur format subsection (kalau dibutuhkan)
+\titleformat{\subsection}
+  {\normalfont\bfseries\fontsize{11pt}{13pt}\selectfont}
+  {}{0pt}{}
+
+\titlespacing*{\subsection}
+  {0pt}{12pt}{2pt}
+\usepackage{multicol}
 
 \begin{document}
+
+% Judul
+\title{\textbf{Analisis Efektivitas Program Penyebaran Bantuan Sosial dalam Upaya Penanggulangan Kemiskinan di Provinsi Bengkulu}}
+\author{
+  Kevin Synagogue Panjaitan$^{1}$, Alysa Marsellia$^{2}$ \\
+  $^1$Falkultas Sains Dan Teknologi,Universitas Jambi \\
+  \texttt{kpanjaitan123@gmail.com}
+}
+\date{}
 \maketitle
 
-
-\begin{abstract} 
-\noindent 
-
+ \begin{center}
+    \bfseries Abstrak
+\end{center}
 Kemiskinan masih menjadi tantangan utama di Provinsi Bengkulu. Berbagai program bantuan sosial telah digulirkan pemerintah untuk mengatasinya, namun efektivitasnya belum sepenuhnya jelas. Untuk itu, penelitian ini menganalisis efektivitas penyebaran bantuan sosial dengan menggunakan tiga indikator utama: Rata-Rata Lama Sekolah (RLS), Pengeluaran Per Kapita, dan Upah Minimum Regional (UMR). Ketiga indikator ini dianggap mewakili aspek pendidikan dan ekonomi yang berkaitan erat dengan kemiskinan. Berbagai studi sebelumnya menunjukkan bahwa peningkatan RLS berdampak pada penurunan angka kemiskinan karena pendidikan memperbesar peluang kerja dan pendapatan. Pengeluaran per kapita mencerminkan daya beli masyarakat, yang juga berhubungan dengan kesejahteraan. Sementara itu, UMR dapat meningkatkan pendapatan pekerja dan berkontribusi dalam pengurangan kemiskinan, meskipun dampaknya bisa bervariasi antar wilayah. Penelitian ini menggunakan metode \textit{K-Means Clustering} untuk mengelompokkan kabupaten/kota di Provinsi Bengkulu berdasarkan ketiga indikator tersebut. Data diambil dari Badan Pusat Statistik (BPS) dan mencakup 10 wilayah. Hasil analisis menunjukkan bahwa titik optimal jumlah klaster adalah tiga. Visualisasi dan klasterisasi mengungkap bahwa daerah dengan RLS dan pengeluaran lebih tinggi cenderung berada dalam klaster yang berbeda dibandingkan dengan daerah yang lebih rendah pada kedua indikator tersebut. Sebagai contoh, Kota Bengkulu tergolong dalam klaster dengan tingkat pendidikan dan ekonomi tertinggi. Sementara itu, kabupaten seperti Kaur dan Seluma berada dalam klaster dengan indikator yang lebih rendah. Perbedaan ini menunjukkan bahwa kondisi sosial ekonomi di Provinsi Bengkulu sangat bervariasi, sehingga kebijakan bantuan sosial sebaiknya disesuaikan dengan karakteristik tiap klaster. Dengan pendekatan berbasis data ini, program pengentasan kemiskinan dapat lebih tepat sasaran dan efisien.
+  
+\textbf{Kata Kunci:} Kemiskinan, Bantuan Sosial, Rata-Rata Lama Sekolah, Pengeluaran Per Kapita, Upah Minimum Regional, K-Means Clustering, Provinsi Bengkulu
 
+\clearpage
+% Abstract (English)
+ \begin{center}
+    \bfseries Abstract
+\end{center}
+Poverty remains a major challenge in Bengkulu Province. The government has launched various social assistance programs to address this issue, yet their effectiveness is not entirely clear. This study analyzes the effectiveness of social assistance distribution using three key indicators: Average Years of Schooling (AYS), Expenditure per Capita, and Regional Minimum Wage (RMW). These indicators are considered to represent the educational and economic aspects closely related to poverty. Previous studies have shown that an increase in AYS leads to a decline in poverty levels, as education improves employment opportunities and income. Expenditure per capita reflects people’s purchasing power, which is also associated with overall welfare. Meanwhile, the RMW can raise workers’ incomes and contribute to poverty reduction, although its impact may vary across regions. This study employs the \textit{K-Means Clustering} method to group districts/municipalities in Bengkulu Province based on these three indicators. Data were obtained from the Central Bureau of Statistics (BPS) and cover 10 regions. The analysis indicates that the optimal number of clusters is three. Visualization and clustering reveal that regions with higher AYS and expenditure tend to fall into different clusters compared to those with lower values for both indicators. For example, Bengkulu City is classified within the cluster with the highest education and economic levels, while districts such as Kaur and Seluma belong to clusters with lower indicators. These differences highlight the diverse socio-economic conditions in Bengkulu Province, suggesting that social assistance policies should be tailored to the characteristics of each cluster. With this data-driven approach, poverty alleviation programs can be made more targeted and efficient.  
 
+\textbf{Keywords:} Poverty; Social Assistance; Average Years of Schooling; Expenditure per Capita; Regional Minimum Wage; K-Means Clustering; Bengkulu Province
 
- \end{abstract}
-
-
-\noindent\keywords{Kemiskinan, Bantuan Sosial, Rata-Rata Lama Sekolah, Pengeluaran Per Kapita, Upah Minimum Regional, K-Means Clustering, Provinsi Bengkulu}
-\\
-
-% \noindent\authorroles{For determining author roles, please use following taxonomy: \url{https://credit.niso.org/}. Please list the roles for each author.}\\
-
-% \noindent{Data papers have a word limit of 1,000-1,500 words, excluding title, author affiliations, abstract, Tables/Figures and references, but including Tables/Figures captions and footnotes. To complete this data paper template, please delete or replace the text not given in bold with your own text.} \\
-
-% \noindent{Authors must ensure that the manuscript text, including the abstract, is original and not directly taken from dataset repository descriptions. The text must be paraphrased and adapted to fit the context of the article.}
-
+\begin{multicols}{2}
 \section{Pendahuluan}
 
 Kemiskinan merupakan salah satu tantangan utama yang dihadapi oleh banyak negara, termasuk Indonesia. Provinsi Bengkulu, dengan karakteristik geografis dan demografis yang unik, menghadapi permasalahan kemiskinan yang kompleks. Dalam upaya menurunkan angka kemiskinan, pemerintah telah meluncurkan berbagai program bantuan sosial yang bertujuan meningkatkan kesejahteraan masyarakat. Namun, efektivitas program-program tersebut sering kali dipertanyakan, terutama ketika dikaitkan dengan indikator pendidikan dan ekonomi sebagai tolok ukur keberhasilan penanggulangan kemiskinan. Salah satu cara untuk menilai efektivitas tersebut adalah dengan menganalisis beberapa indikator, seperti Rata-Rata Lama Sekolah (RLS), Pengeluaran Per Kapita, dan Upah Minimum Regional (UMR).
@@ -191,28 +212,30 @@ Pengolahan data dilakukan untuk mempersiapkan data yang akan digunakan dalam ana
 \subsubsection{Struktur Data}
 Data yang digunakan dalam penelitian ini disusun dalam bentuk tabel dengan struktur sebagai berikut:
 
-\begin{table}[h]
-    \centering
-    \caption{Rata-Rata Lama Sekolah, Pengeluaran Per Kapita, dan UMR per Kabupaten (2020-2024)}
-  \begin{tabular}{lccc}
-        \hline
-        \textbf{Kabupaten} & \textbf{Rata\_Rata\_Lama\_Sekolah} & \textbf{Pengeluaran\_Per\_Kapita} & \textbf{UMR} \\
-        \hline
-        Bengkulu Selatan & 9.350 & 10353.6 & 2318411.4 \\
-        Rejang Lebong & 8.554 & 10667.4 & 2318411.4 \\
-        Bengkulu Utara & 8.098 & 10870.0 & 2334301.4 \\
-        Kaur & 8.404 & 9069.4 & 2318411.4 \\
-        Seluma & 8.070 & 8711.2 & 2318411.4 \\
-        Mukomuko & 8.406 & 10831.6 & 2594047.4 \\
-        Lebong & 8.216 & 11691.8 & 2318411.4 \\
-        Kepahiang & 8.312 & 9804.4 & 2318411.4 \\
-        Bengkulu Tengah & 7.532 & 9869.2 & 2410581.4 \\
-        Kota Bengkulu & 11.816 & 14603.0 & 2510097.6 \\
-        \hline
-    \end{tabular}
-   
-    \label{tab:tabel_kabupaten}
+\begin{table}[H]
+\centering
+\caption{Rata-rata Lama Sekolah, Pengeluaran Per Kapita, dan UMR per Kabupaten (2020--2024)}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|l|r|r|r|}
+    \hline
+    \textbf{Kabupaten} & \textbf{Rata-rata Lama Sekolah} & \textbf{Pengeluaran Per Kapita} & \textbf{UMR} \\
+    \hline
+    Bengkulu Selatan  &  9.350  &  10353.6 & 2318411.4 \\
+    Rejang Lebong     &  8.554  &  10667.4 & 2318411.4 \\
+    Bengkulu Utara    &  8.098  &  10870.0 & 2334301.4 \\
+    Kaur              &  8.404  &   9069.4 & 2318411.4 \\
+    Seluma            &  8.070  &   8711.2 & 2318411.4 \\
+    Mukomuko          &  8.406  &  10831.6 & 2594047.4 \\
+    Lebong            &  8.216  &  11691.8 & 2318411.4 \\
+    Kepahiang         &  8.312  &   9804.4 & 2318411.4 \\
+    Bengkulu Tengah   &  7.532  &   9869.2 & 2410581.4 \\
+    Kota Bengkulu     & 11.816  &  14603.0 & 2510097.6 \\
+    \hline
+\end{tabular}%
+}
+\label{tab:tabel_kabupaten}
 \end{table}
+
 
 
 \subsubsection{Proses Pengolahan Data}
@@ -282,27 +305,31 @@ Grafik Metode Elbow ini menunjukkan bahwa titik optimal untuk jumlah kluster dal
 
 Berdasarkan Gambar \ref{fig:clustring} tersebut menunjukkan klasterisasi kabupaten berdasarkan variabel pendidikan dan ekonomi. Sumbu X menggambarkan rata-rata lama sekolah di setiap kabupaten, dengan rentang 8 hingga 12 tahun. Sumbu Y menunjukkan pengeluaran per kapita, dengan rentang antara 9000 hingga 15000. Sumbu Z menggambarkan Upah Minimum Regional (UMR), dengan nilai berkisar dari sekitar 2.30 hingga 2.60. Warna pada titik-titik menggambarkan kluster yang berbeda, yang mengelompokkan kabupaten berdasarkan kemiripan dalam tiga variabel tersebut. Warna yang berbeda menandakan kelompok yang berbeda. Dari analisis ini, terlihat bahwa kabupaten dengan rata-rata lama sekolah yang lebih tinggi cenderung memiliki pengeluaran per kapita yang lebih tinggi. Kenaikan UMR tampaknya tidak terlalu bervariasi di antara kluster, tetapi bisa memberikan sedikit perbedaan. Kluster yang lebih tinggi, ditunjukkan dengan warna lebih cerah, mungkin menunjukkan kabupaten dengan kondisi ekonomi dan pendidikan yang lebih baik. Penelitian lebih lanjut dapat dilakukan untuk memahami faktor-faktor penyebab perbedaan ini, dan bagaimana program bantuan sosial dapat dioptimalkan untuk kluster-kluster tertentu.
 
-\begin{table}[h]
-    \centering
-    \begin{tabular}{ccccc}
-        \hline
-        \textbf{Kabupaten} & \textbf{Rata Rata Lama Sekolah} & \textbf{Pengeluaran Per Kapita} & \textbf{UMR} & \textbf{Kluster} \\
-        \hline
-        Bengkulu Selatan & 9.350 & 10,353.6 & 2,318,411.4 & 2 \\
-        Rejang Lebong & 8.554 & 10,667.4 & 2,318,411.4 & 2 \\
-        Bengkulu Utara & 8.098 & 10,870.0 & 2,334,301.4 & 2 \\
-        Kaur & 8.404 & 9,069.4 & 2,318,411.4 & 0 \\
-        Seluma & 8.070 & 8,711.2 & 2,318,411.4 & 0 \\
-        Mukomuko & 8.406 & 10,831.6 & 2,594,047.4 & 3 \\
-        Lebong & 8.216 & 11,691.8 & 2,318,411.4 & 2 \\
-        Kepahiang & 8.312 & 9,804.4 & 2,318,411.4 & 0 \\
-        Bengkulu Tengah & 7.532 & 9,869.2 & 2,410,581.4 & 4 \\
-        Kota Bengkulu & 11.816 & 14,603.0 & 2,510,097.6 & 1 \\
-        \hline
-    \end{tabular}
-    \caption{Data Kabupaten Bengkulu}
-    \label{tab:data_hasil_cluster}
+\begin{table}[H]
+\small
+\centering
+\caption{Data Kabupaten Bengkulu}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Kabupaten} & \textbf{Rata-Rata Lama Sekolah} & \textbf{Pengeluaran Per Kapita} & \textbf{UMR} & \textbf{Kluster} \\
+    \hline
+    Bengkulu Selatan  &  9.350  &  10353.6 & 2318411.4 & 2 \\
+    Rejang Lebong     &  8.554  &  10667.4 & 2318411.4 & 2 \\
+    Bengkulu Utara    &  8.098  &  10870.0 & 2334301.4 & 2 \\
+    Kaur              &  8.404  &   9069.4 & 2318411.4 & 0 \\
+    Seluma            &  8.070  &   8711.2 & 2318411.4 & 0 \\
+    Mukomuko          &  8.406  &  10831.6 & 2594047.4 & 3 \\
+    Lebong            &  8.216  &  11691.8 & 2318411.4 & 2 \\
+    Kepahiang         &  8.312  &   9804.4 & 2318411.4 & 0 \\
+    Bengkulu Tengah   &  7.532  &   9869.2 & 2410581.4 & 4 \\
+    Kota Bengkulu     & 11.816  &  14603.0 & 2510097.6 & 1 \\
+    \hline
+\end{tabular}%
+}
+\label{tab:data_hasil_cluster}
 \end{table}
+
 
 Berdasarkan Tabel \ref{tab:data_hasil_cluster} yang disajikan memberikan gambaran mengenai beberapa indikator sosial ekonomi dari berbagai kabupaten di Provinsi Bengkulu. Variabel yang dianalisis meliputi Rata-rata Lama Sekolah, Pengeluaran Per Kapita, Upah Minimum Regional (UMR), dan Kluster hasil analisis klustering. Rata-rata Lama Sekolah merupakan indikator penting yang mencerminkan tingkat pendidikan di setiap kabupaten. Pengeluaran Per Kapita memberikan wawasan tentang rata-rata pengeluaran individu per tahun, yang diukur dalam ribuan rupiah. UMR mencerminkan standar upah minimum yang berlaku di masing-masing kabupaten. Analisis klustering mengelompokkan kabupaten-kabupaten ini ke dalam beberapa kluster berdasarkan kesamaan karakteristik. Kluster 2, yang mencakup Bengkulu Selatan, Rejang Lebong, Bengkulu Utara, dan Lebong, menunjukkan pengeluaran per kapita yang relatif lebih tinggi. Sebaliknya, Kluster 0, terdiri dari Kaur, Seluma, dan Kepahiang, memiliki pengeluaran per kapita yang lebih rendah. Mukomuko, yang termasuk dalam Kluster 3, memiliki pengeluaran per kapita dan UMR yang tinggi, menempatkannya dalam kategori tersendiri. Bengkulu Tengah masuk ke Kluster 4 dengan pengeluaran per kapita menengah. Kota Bengkulu, yang berada di Kluster 1, menunjukkan rata-rata lama sekolah dan pengeluaran per kapita tertinggi di antara semua kabupaten. Dari analisis ini, dapat disimpulkan bahwa kabupaten dengan pengeluaran per kapita dan UMR lebih tinggi, seperti Kota Bengkulu, cenderung memiliki tingkat pendidikan yang lebih baik. Perbedaan antar kluster menunjukkan adanya variasi dalam kondisi sosial ekonomi, yang dapat menjadi dasar bagi penyesuaian kebijakan bantuan sosial untuk meningkatkan efektivitas dan efisiensi dalam penanggulangan kemiskinan di Provinsi Bengkulu.
 
@@ -330,11 +357,9 @@ Hasil klasterisasi ini dapat menjadi dasar dalam penyusunan kebijakan bantuan so
 \end{enumerate}
 
 
-
-\clearpage
 \renewcommand{\refname}{Daftar Pustaka}
 \bibliographystyle{johd}
 \bibliography{bib}
-
+\end{multicols}
 
 \end{document}
