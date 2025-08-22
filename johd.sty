@@ -1,36 +1,19 @@
-\setlength{\paperwidth}{21cm}   % A4
-\setlength{\paperheight}{29.7cm}% A4
-\setlength\topmargin{-0.5cm}    
-\setlength\oddsidemargin{0cm}   
-\setlength\textheight{24.7cm} 
-\setlength\textwidth{16.0cm}
-\setlength\columnsep{0.6cm}  
-\newlength\titlebox 
-\setlength\titlebox{5cm}
-\setlength\headheight{5pt}   
-\setlength\headsep{0pt}
-\pagestyle{plain}
-\usepackage{color}
-\usepackage[natbibapa]{apacite}
-\usepackage{xurl}
-\usepackage[colorlinks,citecolor=black,urlcolor=blue, linkcolor=blue, bookmarks=false,hypertexnames=true]{hyperref}
-\usepackage{url}
-\usepackage{float}
-\usepackage{graphicx}
-%\usepackage{libertine}
-\usepackage{doi} % hyperlink URLs
-\renewcommand{\doi}{DOI:~}
+\usepackage{times} % Times New Roman
+\renewcommand{\baselinestretch}{1.0} % spasi tunggal
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
 
-\newcommand\outauthor{
-	\begin{tabular}[t]{c}
-		\bf\@author
-	\end{tabular}}
-	
-%Add keyword command
-\providecommand{\keywords}[1]
-{\small\textbf{Kata Kunci:} #1
-}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
-\providecommand{\authorroles}[1]
-{\small\textbf{Author roles:} #1
-}
+\fancyhf{} % kosongkan header & footer
+
+% Footer
+\fancyfoot[L]{\vspace{10cm}Lomba Karya Tulis Ilmiah PENDAP 2025} % kiri
+\fancyfoot[C]{\hspace{1.5cm}\thepage}                            % tengah
+
+\renewcommand{\headrulewidth}{0pt} % tanpa garis header
+\renewcommand{\footrulewidth}{0pt} % tanpa garis footer
+
+
+
